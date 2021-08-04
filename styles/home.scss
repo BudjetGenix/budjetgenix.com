@@ -1,0 +1,114 @@
+// colors
+$orange: #ffa800;
+$white: #ffffff;
+$purple: #5278ff;
+$blue: #319cff;
+$darkgray: #161616;
+$gray: #454545;
+$lightgray: #696969;
+
+.container {
+    height: 700px;
+    width: 100%;
+    border-bottom: 2px solid rgb(223, 223, 223);
+    background: rgb(74, 222, 255);
+    background: linear-gradient(180deg, #83ffcf7f 0%, hsla(12, 100%, 68%, 0.5) 100%);
+    & .main {
+        display: flex;
+        position: absolute;
+        top: 330px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%;
+        min-width: 300px;
+        max-width: 1300px;
+
+        & .text-container {
+            margin: auto;
+            margin-top: calc(auto - 50px);
+            width: 45%;
+            & h1 {
+                margin: 0;
+                color: $darkgray;
+                font-size: 2.4rem;
+                text-transform: capitalize;
+            }
+            & p {
+                margin: 20px 0 30px 0;
+                color: gray;
+            }
+            .special {
+                color: $purple;
+            }
+        }
+        & .image {
+            margin: auto;
+            width: 45%;
+            & .picture {
+                width: 80%;
+                min-width: 400px;
+                margin: auto;
+                display: flex;
+            }
+        }
+    }
+}
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 5px;
+    text-align: center;
+    background-color: $blue;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 50%;
+    max-width: 350px;
+    min-width: 200px;
+    color: $white;
+    box-shadow: 2px 2px 0px 0px $purple;
+    transition: 70ms ease;
+    &:hover {
+        background-color: $purple;
+        box-shadow: 2px 2px 0px 0px $blue;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .container {
+        & .main {
+            width: 90vw;
+            & .image .picture {
+                min-width: 350px;
+            }
+            & .text-container h1 {
+                font-size: 1.9rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 850px) {
+    .container {
+        height: 800px;
+        & .main {
+            top: 340px;
+            width: 80%;
+            flex-direction: column-reverse;
+            & .text-container {
+                width: 100%;
+                margin: 0;
+                & .btn {
+                    width: 250px;
+                    max-width: unset;
+                }
+            }
+            & .image {
+                width: 100%;
+                margin: 0;
+                & .picture {
+                    width: 100%;
+                    max-width: 20rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
