@@ -1,61 +1,73 @@
 // colors
 $orange: #ffa800;
 $white: #ffffff;
-$purple: #5278ff;
+$purple: #5e66ff;
+$light-purple: #7088ff;
 $blue: #319cff;
 $darkgray: #161616;
-$somedarkgray: #2e2e2e;
+$someDarkgray: #2e2e2e;
 $gray: #454545;
 $lightgray: #696969;
-
-$buttonbg: #292929;
+$btnBackground: #313131;
 
 .container {
     height: 700px;
     z-index: 1;
     width: 100%;
     border-bottom: 2px solid rgb(223, 223, 223);
-    & .main {
+    position: relative;
+    .main {
+        display: flex;
+        flex-direction: column;
         z-index: 2;
         height: 400px;
         position: absolute;
-        top: 200px;
-        left: 50px;
-        width: 75%;
-        min-width: 300px;
-        max-width: 1300px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
         transition: 100ms ease;
+        justify-content: center;
+        align-content: center;
 
         @media screen and (min-width: 1800px) {
-            left: 40%;
-            transform: translateX(-50%);
+            left: 300px;
+            top: 190px;
+            transform: none;
         }
-
-        @media screen and (min-width: 2000px) {
-            left: 50%;
-            transform: translateX(-50%);
+        @media screen and (min-width: 2600px) {
+            text-align: center;
+            transform: none;
+            .btn {
+                margin: auto;
+            }
         }
 
         & .text-container {
-            margin: auto;
             & h1 {
+                margin: 0;
                 font-family: 'Poppins', sans-serif;
                 font-weight: 900;
-                margin: 0;
                 color: $darkgray;
-                font-size: 4rem;
+                font-size: 3.7rem;
                 text-transform: capitalize;
                 & .special {
                     color: $white;
-                    background-color: $darkgray;
-                    background: linear-gradient(
-                        180deg,
-                        rgba(150, 149, 255, 1) 0%,
-                        rgba(89, 132, 255, 1) 100%
+                    background: $darkgray linear-gradient(
+                                    180deg,
+                                    rgba(150, 149, 255, 1) 0%,
+                                    rgba(89, 132, 255, 1) 100%
                     );
                     -webkit-background-clip: text;
-                    background-clip: text;
                     -webkit-text-fill-color: transparent;
+
+                    transition: 200ms ease;
+
+                    &:before,::after {
+
+
+                    }
+
                 }
             }
             & p {
@@ -64,7 +76,6 @@ $buttonbg: #292929;
                 font-weight: 500;
             }
             .special {
-                pointer-events: none;
                 color: $purple;
             }
         }
@@ -75,46 +86,43 @@ $buttonbg: #292929;
     font-weight: 500;
     padding: 10px;
     text-align: center;
-    border: 1px solid $darkgray;
-    border-radius: 7px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     width: 50%;
     max-width: 350px;
     min-width: 200px;
     background-color: $darkgray;
     color: $white;
-    box-shadow: 0px 4px 0px 0px $gray;
-    transition: 70ms ease;
+    transition: 100ms ease;
     &:hover {
-        background-color: $buttonbg;
+        background: $someDarkgray;
     }
-    &:active {
-        box-shadow: 0px 0px 0px 0px $gray;
-        transform: translateY(4px);
-    }
-    &::selection,
-    ::-moz-selection {
-        background-color: transparent;
+    @media screen and (max-width: 800px) {
+        box-shadow: none;
+        transform: none !important;
     }
 }
 @media screen and (max-width: 800px) {
     .container {
-        height: 800px;
+
+        height: 600px;
+
         & .main {
-            width: 80%;
-            left: 50%;
-            transform: translateX(-50%);
-            flex-direction: column-reverse;
             & .text-container {
                 width: 100%;
                 margin: 0;
                 & h1 {
                     font-size: 2rem;
                 }
-                & .btn {
-                    width: 100%;
-                    max-width: unset;
+                & p {
+                    font-size: 0.93rem;
                 }
+            }
+            & .btn {
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: unset;
             }
         }
     }

@@ -1,3 +1,3 @@
 export default {
-    landing: 'https://cdn.budjetgenix.com/taxi-884.svg',
+    profile: 'https://cdn.budjetgenix.com/icons8-test-account.svg',
 };
