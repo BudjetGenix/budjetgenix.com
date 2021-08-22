@@ -8,7 +8,7 @@ export default function Landing() {
             <div className='main'>
                 <div className='text-container'>
                     <h1>
-                        your <span className='special'>secure</span> and <span className='special'>free </span>
+                        your <span className='special'>secure</span> and <span className='special'>free</span>{' '}
                         budgeting.
                     </h1>
                     <p>
@@ -20,7 +20,7 @@ export default function Landing() {
                     </p>
                     <br />
                 </div>
-                <div className='btn'>Get started, it's free!</div>
+                <div className='btn'><span className="special">Get started for free</span></div>
             </div>
         </div>
     );

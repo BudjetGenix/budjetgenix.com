@@ -28,18 +28,19 @@ $btnBackground: #313131;
         width: 80%;
         transition: 100ms ease;
         justify-content: center;
-        align-content: center;
 
         @media screen and (min-width: 1800px) {
-            left: 300px;
-            top: 190px;
-            transform: none;
+            left: 50%;
+            width: 100rem;
+            top: 50%;
         }
         @media screen and (min-width: 2600px) {
             text-align: center;
-            transform: none;
+            left: 50%;
+            top: 180px;
+            transform: translate(-50%, 0%);
             .btn {
-                margin: auto;
+                margin: 0 auto;
             }
         }
 
@@ -52,22 +53,32 @@ $btnBackground: #313131;
                 font-size: 3.7rem;
                 text-transform: capitalize;
                 & .special {
+                    position: relative;
                     color: $white;
                     background: $darkgray linear-gradient(
-                                    180deg,
-                                    rgba(150, 149, 255, 1) 0%,
-                                    rgba(89, 132, 255, 1) 100%
+                        180deg,
+                        rgba(150, 149, 255, 1) 0%,
+                        rgba(89, 132, 255, 1) 100%
                     );
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
 
-                    transition: 200ms ease;
-
-                    &:before,::after {
-
-
+                    &:before {
+                        content: "";
+                        transition: background-size 300ms ease;
+                        border-radius: 10px;
+                        background-size: 0 3px;
+                        background: linear-gradient(
+                                        90deg,
+                                        rgb(236, 149, 255) 0%,
+                                        rgb(255, 89, 139) 100%
+                        ) no-repeat left bottom;
+                        -webkit-background-clip: unset;
+                        -webkit-text-fill-color: unset;
+                        &:hover {
+                            background-size: 100% 3px;
+                        }
                     }
-
                 }
             }
             & p {
@@ -82,6 +93,7 @@ $btnBackground: #313131;
     }
 }
 .btn {
+    text-transform: capitalize;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     padding: 10px;
@@ -103,12 +115,15 @@ $btnBackground: #313131;
         transform: none !important;
     }
 }
+.special {
+}
+
+
 @media screen and (max-width: 800px) {
     .container {
-
         height: 600px;
-
         & .main {
+            width: 80%;
             & .text-container {
                 width: 100%;
                 margin: 0;
@@ -127,3 +142,6 @@ $btnBackground: #313131;
         }
     }
 }
+::selection {
+}
+::-moz-selection {}
