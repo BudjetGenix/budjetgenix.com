@@ -1,4 +1,5 @@
 import Menu from './Menu';
+import Link from 'next/link'
 
 export default function Landing() {
     return (
@@ -8,15 +9,17 @@ export default function Landing() {
             <div className='main'>
                 <div className='text-container'>
                     <h1>
-                        your <span className='special'>secure</span> and <span className='special'>free</span>{' '}
+                        your <span className='special'>secure</span> and <span className='special'>simplified</span>{' '}
                         budgeting.
                     </h1>
                     <p>
-                        Lirum ipsum lirum ipsum vauvau
+                        Want to keep track of your daily income, budgets and expenses and everything between?
                         <br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vestibulum nunc et
+                        Try it. It's free, and you can even host it&nbsp;
+                        <Link href="https://github.com/budjetgenix">yourself</Link>.
                         <br />
-                        ligula dapibus, sit amet egestas ex iaculis. Duis suscipit a lorem in tempor. Vivamus
+                        Your data is safe with us. If you got any problems or questions, you can open an issue on&nbsp;
+                        <Link href="https://github.com/budjetgenix/">Github</Link>.
                     </p>
                     <br />
                 </div>

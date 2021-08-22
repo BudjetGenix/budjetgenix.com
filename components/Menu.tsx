@@ -1,5 +1,6 @@
 import imgSources from '../services/imgSources';
 import { useState } from "react";
+import { AccountDropdown } from './modules/AccountDropdown'
 
 export default function Menu() {
     const [menuShown, setMenuShown] = useState(false);
@@ -15,11 +16,7 @@ export default function Menu() {
                 <img src={imgSources.profile} alt='' />
             </div>
 
-            {
-                menuShown && <div className='account-dropdown'>
-                    Yipe
-                </div>
-            }
+            { menuShown && <AccountDropdown  accountName={""} accountUrl={""}/> }
 
         </div>
     );
