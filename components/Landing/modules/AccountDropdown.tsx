@@ -18,9 +18,9 @@ export function AccountDropdown(props: { loggedIn: boolean, accountName: string 
         <div className='account-dropdown'>
             <div className="items">
                 <div className="welcome">
-                    { signedIn ? "You are signed in as" : "You are not signed in." }
+                    { signedIn ? "You are signed in as" : "Not signed in." }
                     &nbsp;
-                    <Link href={signedIn ? `/user/${encodeURIComponent(accountName)}` : `login` }>
+                    <Link href={signedIn ? `/user/${encodeURIComponent(accountName)}` : `/login` }>
                         <span className="accountName">
                             {signedIn ? accountName : "Login"}
                         </span>

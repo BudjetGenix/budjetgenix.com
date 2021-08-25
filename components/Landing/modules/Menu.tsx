@@ -1,6 +1,6 @@
-import imgSources from '../services/imgSources';
+import imgSources from '../../../services/imgSources';
 import {useRef, RefObject, useState, useEffect} from "react";
-import { AccountDropdown } from './modules/AccountDropdown'
+import { AccountDropdown } from './AccountDropdown'
 
 function listenOutsideClicks(menuRef: RefObject<any>, menuShown: boolean, toggleMenu: Function) {
     useEffect(() => {

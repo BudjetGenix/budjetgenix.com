@@ -1,4 +1,4 @@
-import Menu from './Menu';
+import Menu from './modules/Menu';
 import Link from 'next/link'
 
 export default function Landing() {
