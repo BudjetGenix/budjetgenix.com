@@ -1,10 +1,8 @@
 import styles from "../../styles/login.module.scss"
-import Image from 'next/image';
-import links from "../../services/imgSources";
 import {useEffect, useRef} from "react";
 
 
-export default function() {
+export default function Login() {
     const f = useRef(null);
     const el = f.current!;
     console.log(el);

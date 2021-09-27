@@ -16,7 +16,7 @@ function listenOutsideClicks(menuRef: RefObject<any>, menuShown: boolean, toggle
     }, [menuShown])
 }
 
-export default function Menu() {
+function Menu() {
     const [menuShown, setMenuShown] = useState(false);
     const [username, setUsername] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState("false");
@@ -43,9 +43,9 @@ export default function Menu() {
                 {
                     menuShown
                         ?   <AccountDropdown
-                                loggedIn={false}
-                                accountName={""}
-                            />
+                            loggedIn={false}
+                            accountName={""}
+                        />
                         : <></>
                 }
             </div>
@@ -53,3 +53,5 @@ export default function Menu() {
         </div>
     );
 }
+
+export default Menu;

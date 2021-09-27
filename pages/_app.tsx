@@ -4,7 +4,7 @@ import '../styles/home.scss';
 import '../styles/menu.scss';
 import '../styles/login.module.scss'
 
-export default function({ Component, pageProps }: AppProps) {
+export default function Main({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />;
 }
 
