@@ -1,19 +1,35 @@
 import Link from 'next/link'
 
-const items = [
-    { id: 1, name: "Your profile", link: "" },
-    { id: 2, name: "Your budgets", link: "" },
-    { id: 3, name: "Settings", link: "" },
-    { id: 4, name: "Your profile", link: "" },
-    { id: 5, name: "Your profile", link: "" },
-    { id: 6, name: "Your profile", link: "" },
-    { id: 7, name: "Your profile", link: "" },
-    { id: 8, name: "Your profile", link: "" },
-]
+
+const items = {
+    loggedIn: [
+        { id: 1, name: "Your profile", link: "" },
+        { id: 2, name: "Your budgets", link: "" },
+        { id: 3, name: "Settings", link: "" },
+        { id: 4, name: "Your profile", link: "" },
+        { id: 5, name: "Your profile", link: "" },
+        { id: 6, name: "Your profile", link: "" },
+        { id: 7, name: "Your profile", link: "" },
+        { id: 8, name: "Your profile", link: "" },
+    ],
+    loggedOut: [
+        { id: 1, name: "Your profile", link: "" },
+        { id: 2, name: "Your budgets", link: "" },
+        { id: 3, name: "Settings", link: "" },
+        { id: 4, name: "Your profile", link: "" },
+        { id: 5, name: "Your profile", link: "" },
+        { id: 6, name: "Your profile", link: "" },
+        { id: 7, name: "Your profile", link: "" },
+        { id: 8, name: "Your profile", link: "" },
+    ]
+}
 
 export function AccountDropdown(props: { loggedIn: boolean, accountName: string }) {
     const signedIn = props.loggedIn || false;
     const accountName = props.accountName || "unknown";
+    let loop = signedIn
+        ? items.loggedIn
+        : items.loggedOut
     return (
         <div className='account-dropdown'>
             <div className="items">
@@ -27,7 +43,7 @@ export function AccountDropdown(props: { loggedIn: boolean, accountName: string 
                     </Link>
                 </div>
                 <hr />
-                { items.map(item => <div key={Math.random()} className="item">{item.name}</div>) }
+                { loop.map(item => <div key={Math.random()} className="item">{item.name}</div>) }
             </div>
         </div>
     )

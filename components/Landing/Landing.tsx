@@ -1,7 +1,7 @@
 import Menu from './modules/Menu';
 import Link from 'next/link'
 
-export default function Landing() {
+export default function Landing(props: {loggedIn: boolean}) {
     return (
         <div className='container'>
             <Menu />
@@ -23,7 +23,9 @@ export default function Landing() {
                     </p>
                     <br />
                 </div>
-                <div className='btn'><span className="special">Get started for free</span></div>
+                <div className='btn'><span className="special">
+                    {props.loggedIn ? "View my dashboard" : "Sign up now, it's free!"}
+                </span></div>
             </div>
         </div>
     );

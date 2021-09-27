@@ -2,6 +2,8 @@ import imgSources from '../../../services/imgSources';
 import {useRef, RefObject, useState, useEffect} from "react";
 import { AccountDropdown } from './AccountDropdown'
 
+
+
 function listenOutsideClicks(menuRef: RefObject<any>, menuShown: boolean, toggleMenu: Function) {
     useEffect(() => {
         const fuc = (e: Event) => {
@@ -16,6 +18,13 @@ function listenOutsideClicks(menuRef: RefObject<any>, menuShown: boolean, toggle
 
 export default function Menu() {
     const [menuShown, setMenuShown] = useState(false);
+    const [username, setUsername] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState("false");
+
+    useEffect(() => {
+
+    }, [])
+
     const  toggleMenu = () => {
         setMenuShown(!menuShown);
     }
@@ -25,7 +34,7 @@ export default function Menu() {
 
     return (
         <div className='menu' ref={menuRef}>
-            <div className='logo'>BudgetGenie</div>
+            <div className='logo'>BudgetGenix</div>
 
             <div onMouseDown={toggleMenu} className='account'>
                 <img src={imgSources.profile} alt='' />
@@ -33,7 +42,7 @@ export default function Menu() {
             <div>
                 {
                     menuShown
-                        ? <AccountDropdown
+                        ?   <AccountDropdown
                                 loggedIn={false}
                                 accountName={""}
                             />

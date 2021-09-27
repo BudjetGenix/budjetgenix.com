@@ -2,8 +2,9 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import '../styles/home.scss';
 import '../styles/menu.scss';
+import '../styles/login.module.scss'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />;
 }
-export default MyApp;
+
